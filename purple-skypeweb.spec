@@ -57,9 +57,6 @@ cd %{plugin_name}
 %make_install
 chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
-
 %files
 %{_libdir}/purple-2/lib%{plugin_name}.so
 %doc %{plugin_name}/README.md CHANGELOG.txt
