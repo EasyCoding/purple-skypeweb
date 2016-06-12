@@ -6,7 +6,7 @@
 
 Name: purple-%{plugin_name}
 Version: 1.1
-Release: 5.%{date}git%{shortcommit0}%{?dist}
+Release: 6.%{date}git%{shortcommit0}%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
@@ -22,6 +22,9 @@ BuildRequires: pkgconfig(purple)
 BuildRequires: pkgconfig(json-glib-1.0)
 BuildRequires: pkgconfig(zlib)
 BuildRequires: gcc
+
+Provides: skype4pidgin = %{version}-%{release}
+Obsoletes: skype4pidgin < %{version}-%{release}
 
 %description
 Adds support for Skype to Pidgin, Adium, Finch and other libpurple 
@@ -43,13 +46,9 @@ cd %{plugin_name}
 # fix W: wrong-file-end-of-line-encoding
 perl -i -pe 's/\r\n/\n/gs' README.md
 
-# generating empty configure script
-echo '#!/bin/bash' > configure
-chmod +x configure
-
 %build
 cd %{plugin_name}
-%configure
+export CFLAGS="%{optflags}"
 %make_build
 
 %install
@@ -67,6 +66,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype/theme
 
 %changelog
+* Sun Jun 12 2016 V1TSK <vitaly@easycoding.org> - 1.1-6.20160510giteb0b500
+- Removed empty configure script. Now obsoletes skype4pidgin package.
+
 * Sun Jun 12 2016 V1TSK <vitaly@easycoding.org> - 1.1-5.20160510giteb0b500
 - Updated to latest Git version.
 
