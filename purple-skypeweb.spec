@@ -6,7 +6,7 @@
 
 Name: purple-%{plugin_name}
 Version: 1.1
-Release: 6.%{date}git%{shortcommit0}%{?dist}
+Release: 7.%{date}git%{shortcommit0}%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
@@ -33,10 +33,10 @@ Requires: %{name} = %{version}-%{release}
 Requires: pidgin
 
 %description -n pidgin-%{plugin_name}
-Adds pixmaps, icons and smileys for Skype protocol inplemented by libskypeweb.
+Adds pixmaps, icons and smileys for Skype protocol implemented by libskypeweb.
 
 %prep
-%autosetup -n skype4pidgin-%{commit0} -p1
+%autosetup -n skype4pidgin-%{commit0}
 cd %{plugin_name}
 
 # fix W: wrong-file-end-of-line-encoding
@@ -62,6 +62,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
+* Mon Jun 13 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.1-7.20160510giteb0b500
+- Fixed directory ownership. Removed patch.
+
 * Sun Jun 12 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.1-6.20160510giteb0b500
 - Removed empty configure script. Now obsoletes skype4pidgin package.
 
