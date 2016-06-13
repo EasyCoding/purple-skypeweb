@@ -13,10 +13,6 @@ License: GPLv3
 URL: https://github.com/EionRobb/skype4pidgin
 Source0: https://github.com/EionRobb/skype4pidgin/archive/%{commit0}.tar.gz#/skype4pidgin-%{shortcommit0}.tar.gz
 
-%if 0%{?fedora}
-Patch0: https://github.com/xvitaly/purple-skypeweb/raw/master/fix_build_under_patched_fedora.patch
-%endif
-
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
 BuildRequires: pkgconfig(json-glib-1.0)
