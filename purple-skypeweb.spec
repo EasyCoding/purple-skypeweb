@@ -14,7 +14,7 @@ URL: https://github.com/EionRobb/skype4pidgin
 Source0: https://github.com/EionRobb/skype4pidgin/archive/%{commit0}.tar.gz#/skype4pidgin-%{shortcommit0}.tar.gz
 
 # Download the upstream tarball and invoke this script while in the
-# tarball's directory: ./generate-tarball.sh %{shortcommit0} %{commit0}
+# tarball's directory: ./generate-tarball.sh %{commit0}
 Source1: https://github.com/xvitaly/purple-skypeweb/raw/master/generate-tarball.sh
 
 BuildRequires: pkgconfig(glib-2.0)
