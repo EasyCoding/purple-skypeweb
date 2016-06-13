@@ -13,6 +13,10 @@ License: GPLv3
 URL: https://github.com/EionRobb/skype4pidgin
 Source0: https://github.com/EionRobb/skype4pidgin/archive/%{commit0}.tar.gz#/skype4pidgin-%{shortcommit0}.tar.gz
 
+# Download the upstream tarball and invoke this script while in the
+# tarball's directory: ./generate-tarball.sh %{shortcommit0} %{commit0}
+Source1: https://github.com/xvitaly/purple-skypeweb/raw/master/generate-tarball.sh
+
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
 BuildRequires: pkgconfig(json-glib-1.0)
@@ -54,8 +58,8 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 
 %files
 %{_libdir}/purple-2/lib%{plugin_name}.so
-%doc %{plugin_name}/README.md CHANGELOG.txt
-%license COPYING.txt
+%doc %{plugin_name}/README.md
+%license %{plugin_name}/gpl3.txt
 
 %files -n pidgin-%{plugin_name}
 %{_datadir}/pixmaps/pidgin/protocols/*/skype*.png
