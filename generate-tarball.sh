@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
-SHORTCOMMIT=$1
-COMMIT=$2
+COMMIT=$1
+SHORTCOMMIT=${COMMIT:0:7}
 
 tar -xzf skype4pidgin-$SHORTCOMMIT.tar.gz
 rm -f skype4pidgin-$SHORTCOMMIT.tar.gz
