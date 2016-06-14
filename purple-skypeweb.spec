@@ -6,7 +6,7 @@
 
 Name: purple-%{plugin_name}
 Version: 1.1
-Release: 7.%{date}git%{shortcommit0}%{?dist}
+Release: 8.%{date}git%{shortcommit0}%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
@@ -66,6 +66,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
+* Tue Jun 14 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.1-8.20160510giteb0b500
+- Added script generate-tarball.sh which can be used to remove legacy sources from tarball.
+
 * Mon Jun 13 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.1-7.20160510giteb0b500
 - Fixed directory ownership. Removed patch.
 
