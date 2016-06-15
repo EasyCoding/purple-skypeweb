@@ -66,7 +66,7 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
-* Wed Jun 14 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.1-9.20160510giteb0b500
+* Wed Jun 15 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.1-9.20160510giteb0b500
 - Updated script generate-tarball.sh (written by Simone Caronni).
 
 * Tue Jun 14 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.1-8.20160510giteb0b500
