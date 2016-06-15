@@ -1,17 +1,18 @@
-#!/bin/bash
+#!/bin/sh
 
-COMMIT=$1
+TARBALL=purple-skypeweb
+
+git clone -q https://github.com/EionRobb/skype4pidgin.git
+cd skype4pidgin
+
+COMMIT=$(git log -n 1 --format=%H)
 SHORTCOMMIT=${COMMIT:0:7}
-shopt -s extglob
 
-if [ -f "skype4pidgin-$SHORTCOMMIT.tar.gz" ]; then
-	tar -xzf skype4pidgin-$SHORTCOMMIT.tar.gz
-	rm -f skype4pidgin-$SHORTCOMMIT.tar.gz
-	
-	pushd skype4pidgin-$COMMIT
-	rm -r !(skypeweb)
-	popd
+mv skypeweb ../$TARBALL-$COMMIT
+cd ..
 
-	tar -czf skype4pidgin-$SHORTCOMMIT.tar.gz skype4pidgin-$COMMIT
-	rm -rf skype4pidgin-$COMMIT
-fi
+tar -cJf $TARBALL-$SHORTCOMMIT.tar.xz $TARBALL-$COMMIT
+rm -rf $TARBALL-$COMMIT skype4pidgin
+
+echo commit0 $COMMIT
+echo Source0 $TARBALL-$SHORTCOMMIT.tar.xz
