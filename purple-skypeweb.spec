@@ -41,25 +41,22 @@ Adds pixmaps, icons and smileys for Skype protocol implemented by libskypeweb.
 
 %prep
 %autosetup -n %{name}-%{commit0}
-cd %{plugin_name}
 
 # fix W: wrong-file-end-of-line-encoding
 perl -i -pe 's/\r\n/\n/gs' README.md
 
 %build
-cd %{plugin_name}
 export CFLAGS="%{optflags}"
 %make_build
 
 %install
-cd %{plugin_name}
 %make_install
 chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 
 %files
 %{_libdir}/purple-2/lib%{plugin_name}.so
-%doc %{plugin_name}/README.md
-%license %{plugin_name}/gpl3.txt
+%doc README.md
+%license gpl3.txt
 
 %files -n pidgin-%{plugin_name}
 %{_datadir}/pixmaps/pidgin/protocols/*/skype*.png
