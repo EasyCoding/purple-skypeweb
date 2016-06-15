@@ -6,16 +6,16 @@
 
 Name: purple-%{plugin_name}
 Version: 1.1
-Release: 8.%{date}git%{shortcommit0}%{?dist}
+Release: 9.%{date}git%{shortcommit0}%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
 URL: https://github.com/EionRobb/skype4pidgin
-Source0: https://github.com/EionRobb/skype4pidgin/archive/%{commit0}.tar.gz#/skype4pidgin-%{shortcommit0}.tar.gz
 
-# Download the upstream tarball and invoke this script while in the
-# tarball's directory: ./generate-tarball.sh %{commit0}
-Source1: https://github.com/xvitaly/purple-skypeweb/raw/master/generate-tarball.sh
+# Run ./generate-tarball.sh script to build tarball from
+# official Git repository without legacy sources.
+Source0: %{name}-%{shortcommit0}.tar.xz
+Source1: generate-tarball.sh
 
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
@@ -40,7 +40,7 @@ Requires: pidgin
 Adds pixmaps, icons and smileys for Skype protocol implemented by libskypeweb.
 
 %prep
-%autosetup -n skype4pidgin-%{commit0}
+%autosetup -n %{name}-%{commit0}
 cd %{plugin_name}
 
 # fix W: wrong-file-end-of-line-encoding
@@ -66,6 +66,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
+* Wed Jun 14 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.1-9.20160510giteb0b500
+- Updated script generate-tarball.sh (written by Simone Caronni).
+
 * Tue Jun 14 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.1-8.20160510giteb0b500
 - Added script generate-tarball.sh which can be used to remove legacy sources from tarball.
 
