@@ -14,5 +14,5 @@ cd ..
 tar -cJf $NAME-$SHORTCOMMIT.tar.xz $NAME-$COMMIT
 rm -rf $NAME-$COMMIT skype4pidgin
 
-echo commit0 $COMMIT
-echo Source0 $NAME-$SHORTCOMMIT.tar.xz
+echo Commit0: $COMMIT
+echo Source0: $NAME-$SHORTCOMMIT.tar.xz
