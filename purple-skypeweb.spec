@@ -1,12 +1,12 @@
 %global plugin_name skypeweb
 
-%global commit0 eb0b5000c56c9c264375ab2334c926c9715ee3d0
+%global commit0 72f0b003252d0c827e9fa5dcb31005ef4a51b036
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20160510
+%global date 20160620
 
 Name: purple-%{plugin_name}
 Version: 1.1
-Release: 9.%{date}git%{shortcommit0}%{?dist}
+Release: 10.%{date}git%{shortcommit0}%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
@@ -63,6 +63,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
+* Mon Jun 20 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.1-10.20160620git72f0b00
+- Updated to latest Git snapshot.
+
 * Wed Jun 15 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.1-9.20160510giteb0b500
 - Updated script generate-tarball.sh (written by Simone Caronni).
 
