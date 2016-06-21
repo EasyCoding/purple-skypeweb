@@ -47,6 +47,7 @@ perl -i -pe 's/\r\n/\n/gs' README.md
 
 %build
 export CFLAGS="%{optflags}"
+export LDFLAGS="%{__global_ldflags}"
 %make_build
 
 %install
