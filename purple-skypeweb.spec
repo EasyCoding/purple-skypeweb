@@ -6,7 +6,7 @@
 
 Name: purple-%{plugin_name}
 Version: 1.2.1
-Release: 1.%{date}git%{shortcommit0}%{?dist}.1
+Release: 1.%{date}git%{shortcommit0}%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
