@@ -1,12 +1,12 @@
 %global plugin_name skypeweb
 
-%global commit0 2b42d110708837d757b09ebc71e9e7053f259458
+%global commit0 f477d9eb42c924f50169e59421b47c1af593b19c
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20160720
+%global date 20160808
 
 Name: purple-%{plugin_name}
-Version: 1.2
-Release: 2.%{date}git%{shortcommit0}%{?dist}
+Version: 1.2.1
+Release: 1.%{date}git%{shortcommit0}%{?dist}.1
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
@@ -64,6 +64,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
+* Mon Aug 08 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.2.1-1.20160808gitf477d9e
+- Updated to version 1.2.1.
+
 * Thu Jul 21 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.2-2.20160720git2b42d11
 - Updated to latest Git snapshot.
 
