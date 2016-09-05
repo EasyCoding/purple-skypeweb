@@ -74,7 +74,7 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 - Updated to version 1.2.
 
 * Tue Jun 21 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.1-11.20160620git72f0b00
-- Added missing LDFLAGS to %build.
+- Added missing LDFLAGS to build.
 
 * Mon Jun 20 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.1-10.20160620git72f0b00
 - Updated to latest Git snapshot.
