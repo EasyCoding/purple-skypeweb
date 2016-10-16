@@ -65,10 +65,10 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
-* Sun Oct 16 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.2.2-2.20161015gitfd23eab9
+* Sun Oct 16 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.2.2-2.20161015gitd23eab9
 - Added patch to support correct build flags.
 
-* Sun Oct 16 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.2.2-1.20161015gitfd23eab9
+* Sun Oct 16 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.2.2-1.20161015gitd23eab9
 - Updated to version 1.2.2.
 
 * Mon Aug 08 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.2.1-1.20160808gitf477d9e
