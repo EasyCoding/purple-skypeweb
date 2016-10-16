@@ -1,0 +1,29 @@
+From 921bb1128b032d35d6c9f98089e1334ceb1e6a7a Mon Sep 17 00:00:00 2001
+From: Vitaly Zaitsev <vitaly@easycoding.org>
+Date: Sun, 16 Oct 2016 12:14:38 +0200
+Subject: [PATCH] Added LDFLAGS support.
+
+---
+ skypeweb/Makefile | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/skypeweb/Makefile b/skypeweb/Makefile
+index f874aec..fbb91cc 100644
+--- a/skypeweb/Makefile
++++ b/skypeweb/Makefile
+@@ -1,5 +1,6 @@
+ CC	?= cc
+ CFLAGS	?= -O2 -g -pipe
++LDFLAGS ?= -Wl,-z,relro
+ PKG_CONFIG  ?= pkg-config
+ 
+ DIR_PERM	= 0755
+@@ -41,4 +42,4 @@ clean:
+ 	rm -f libskypeweb.so
+ 
+ $(PRPL_NAME): $(SKYPEWEB_SOURCES)
+-	$(CC) -Wall -I. -fPIC $(CFLAGS) $(SKYPEWEB_SOURCES) -o $@ $(LIBPURPLE_CFLAGS) $(LIBPURPLE_LIBS) -shared
++	$(CC) -Wall -I. -fPIC $(CFLAGS) $(SKYPEWEB_SOURCES) -o $@ $(LIBPURPLE_CFLAGS) $(LDFLAGS) $(LIBPURPLE_LIBS) -shared
+-- 
+2.7.4
+
