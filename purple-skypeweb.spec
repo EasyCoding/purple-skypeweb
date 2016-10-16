@@ -6,7 +6,7 @@
 
 Name: purple-%{plugin_name}
 Version: 1.2.2
-Release: 1.%{date}git%{shortcommit0}%{?dist}
+Release: 2.%{date}git%{shortcommit0}%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
@@ -16,6 +16,7 @@ URL: https://github.com/EionRobb/skype4pidgin
 # official Git repository without legacy sources.
 Source0: %{name}-%{shortcommit0}.tar.xz
 Source1: generate-tarball.sh
+Patch0: 0001-Added-LDFLAGS-support.patch
 
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
@@ -40,7 +41,7 @@ Requires: pidgin
 Adds pixmaps, icons and smileys for Skype protocol implemented by libskypeweb.
 
 %prep
-%autosetup -n %{name}-%{commit0}
+%autosetup -n %{name}-%{commit0} -p2
 
 # fix W: wrong-file-end-of-line-encoding
 perl -i -pe 's/\r\n/\n/gs' README.md
@@ -64,6 +65,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
+* Sun Oct 16 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.2.2-2.20161015gitfd23eab9
+- Added patch to support correct build flags.
+
 * Sun Oct 16 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.2.2-1.20161015gitfd23eab9
 - Updated to version 1.2.2.
 
