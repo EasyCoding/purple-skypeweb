@@ -6,7 +6,7 @@
 
 Name: purple-%{plugin_name}
 Version: 1.2.2
-Release: 2.%{date}git%{shortcommit0}%{?dist}
+Release: 3.%{date}git%{shortcommit0}%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
@@ -65,6 +65,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
+* Sun Oct 16 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.2.2-3.20161015gitd23eab9
+- Fixed typo in changelog section. Fixed warning.
+
 * Sun Oct 16 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.2.2-2.20161015gitd23eab9
 - Added patch to support correct build flags.
 
