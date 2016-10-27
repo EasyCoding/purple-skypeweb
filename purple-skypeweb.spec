@@ -16,7 +16,6 @@ URL: https://github.com/EionRobb/skype4pidgin
 # official Git repository without legacy sources.
 Source0: %{name}-%{shortcommit0}.tar.xz
 Source1: generate-tarball.sh
-Patch0: 0001-Added-LDFLAGS-support.patch
 
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
@@ -41,7 +40,7 @@ Requires: pidgin
 Adds pixmaps, icons and smileys for Skype protocol implemented by libskypeweb.
 
 %prep
-%autosetup -n %{name}-%{commit0} -p2
+%autosetup -n %{name}-%{commit0}
 
 # fix W: wrong-file-end-of-line-encoding
 perl -i -pe 's/\r\n/\n/gs' README.md
