@@ -6,7 +6,7 @@
 
 Name: purple-%{plugin_name}
 Version: 1.2.2
-Release: 7.%{date}git%{shortcommit0}%{?dist}
+Release: 8.%{date}git%{shortcommit0}%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
@@ -64,8 +64,11 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
-* Sat Mar 11 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 1.2.2-7.20170226git19ba66e
+* Sat Mar 11 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 1.2.2-8.20170226git19ba66e
 - Updated to latest snapshot.
+
+* Sat Feb 11 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.2.2-7.20161220gitfa888e0
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
 * Thu Dec 22 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.2.2-6.20161220gitfa888e0
 - Updated to latest snapshot.
