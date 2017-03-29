@@ -43,7 +43,7 @@ Adds pixmaps, icons and smileys for Skype protocol implemented by libskypeweb.
 %autosetup -n %{name}-%{commit0}
 
 # fix W: wrong-file-end-of-line-encoding
-perl -i -pe 's/\r\n/\n/gs' README.md
+sed -i -e "s,\r,," README.md
 
 %build
 export CFLAGS="%{optflags}"
