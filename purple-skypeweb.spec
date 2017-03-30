@@ -65,7 +65,7 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 
 %changelog
 * Thu Mar 30 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 1.3-1.20170330git35624c3
-- Updated to latest snapshot.
+- Updated to version 1.3.
 
 * Wed Mar 29 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 1.2.2-11.20170329gitfc3d6f3
 - Updated to latest snapshot.
