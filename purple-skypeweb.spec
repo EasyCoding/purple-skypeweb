@@ -6,7 +6,7 @@
 
 Name: purple-%{plugin_name}
 Version: 1.3
-Release: 2.%{date}git%{shortcommit0}%{?dist}
+Release: 3.%{date}git%{shortcommit0}%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
@@ -16,6 +16,9 @@ URL: https://github.com/EionRobb/skype4pidgin
 # official Git repository without legacy sources.
 Source0: %{name}-%{shortcommit0}.tar.xz
 Source1: generate-tarball.sh
+
+# Pull request sent: https://github.com/EionRobb/skype4pidgin/pull/545
+Patch0: fix_incorrect_makefile.patch
 
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
@@ -40,7 +43,7 @@ Requires: pidgin
 Adds pixmaps, icons and smileys for Skype protocol implemented by libskypeweb.
 
 %prep
-%autosetup -n %{name}-%{commit0}
+%autosetup -n %{name}-%{commit0} -p2
 
 # fix W: wrong-file-end-of-line-encoding
 sed -i -e "s,\r,," README.md
@@ -64,6 +67,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
+* Fri Apr 28 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 1.3-3.20170420git31222f4
+- Fixed script-without-shebang rpmlint error.
+
 * Fri Apr 28 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 1.3-2.20170420git31222f4
 - Updated to latest snapshot.
 
