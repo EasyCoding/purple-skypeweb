@@ -17,9 +17,6 @@ URL: https://github.com/EionRobb/skype4pidgin
 Source0: %{name}-%{shortcommit0}.tar.xz
 Source1: generate-tarball.sh
 
-# Pull request sent: https://github.com/EionRobb/skype4pidgin/pull/545
-Patch0: fix_incorrect_makefile.patch
-
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
 BuildRequires: pkgconfig(json-glib-1.0)
@@ -43,7 +40,7 @@ Requires: pidgin
 Adds pixmaps, icons and smileys for Skype protocol implemented by libskypeweb.
 
 %prep
-%autosetup -n %{name}-%{commit0} -p2
+%autosetup -n %{name}-%{commit0}
 
 # fix W: wrong-file-end-of-line-encoding
 sed -i -e "s,\r,," README.md
