@@ -52,7 +52,6 @@ export LDFLAGS="%{__global_ldflags}"
 
 %install
 %make_install
-chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 
 %files
 %{_libdir}/purple-2/lib%{plugin_name}.so
