@@ -54,9 +54,9 @@ export LDFLAGS="%{__global_ldflags}"
 %make_install
 
 %files
-%{_libdir}/purple-2/lib%{plugin_name}.so
 %doc README.md
 %license gpl3.txt
+%{_libdir}/purple-2/lib%{plugin_name}.so
 
 %files -n pidgin-%{plugin_name}
 %{_datadir}/pixmaps/pidgin/protocols/*/skype*.png
