@@ -2,7 +2,7 @@
 
 %global commit0 4ed9b14306ef101a82f72bfa464d959632f5f5b2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20170515
+%global date 20170615
 
 Name: purple-%{plugin_name}
 Version: 1.4
@@ -64,7 +64,7 @@ popd
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
-* Fri Jun 16 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 1.4-2.20170515git4ed9b14
+* Fri Jun 16 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 1.4-2.20170615git4ed9b14
 - Updated to latest snapshot.
 
 * Sun Apr 30 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 1.4-1.20170430gita2c5b71
