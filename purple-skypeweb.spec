@@ -1,12 +1,12 @@
 %global plugin_name skypeweb
 
-%global commit0 a2c5b71eb1a79cad6c0fa30f99e3dc8b904f04dd
+%global commit0 4ed9b14306ef101a82f72bfa464d959632f5f5b2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20170430
+%global date 20170515
 
 Name: purple-%{plugin_name}
 Version: 1.4
-Release: 1.%{date}git%{shortcommit0}%{?dist}
+Release: 2.%{date}git%{shortcommit0}%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
@@ -44,6 +44,7 @@ sed -i -e "s,\r,," README.md
 %build
 export CFLAGS="%{optflags}"
 export LDFLAGS="%{__global_ldflags}"
+
 pushd %{plugin_name}
 %make_build
 popd
@@ -63,6 +64,9 @@ popd
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
+* Fri Jun 16 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 1.4-2.20170515git4ed9b14
+- Updated to latest snapshot.
+
 * Sun Apr 30 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 1.4-1.20170430gita2c5b71
 - Updated to version 1.4.
 
