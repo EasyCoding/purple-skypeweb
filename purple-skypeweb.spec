@@ -44,14 +44,18 @@ sed -i -e "s,\r,," README.md
 %build
 export CFLAGS="%{optflags}"
 export LDFLAGS="%{__global_ldflags}"
+pushd %{plugin_name}
 %make_build
+popd
 
 %install
+pushd %{plugin_name}
 %make_install
+popd
 
 %files
-%doc README.md
-%license gpl3.txt
+%doc %{plugin_name}/README.md
+%license %{plugin_name}/gpl3.txt
 %{_libdir}/purple-2/lib%{plugin_name}.so
 
 %files -n pidgin-%{plugin_name}
