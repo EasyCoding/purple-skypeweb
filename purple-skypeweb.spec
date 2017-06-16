@@ -19,8 +19,8 @@ BuildRequires: pkgconfig(json-glib-1.0)
 BuildRequires: pkgconfig(zlib)
 BuildRequires: gcc
 
-Provides: skype4pidgin = %{version}-%{release}
-Obsoletes: skype4pidgin < %{version}-%{release}
+Provides: skype4pidgin = %{?epoch:%{epoch}:}%{version}-%{release}
+Obsoletes: skype4pidgin < %{?epoch:%{epoch}:}%{version}-%{release}
 
 %description
 Adds support for Skype to Pidgin, Adium, Finch and other libpurple 
@@ -29,7 +29,7 @@ based messengers.
 %package -n pidgin-%{plugin_name}
 Summary: Adds pixmaps, icons and smileys for Skype protocol
 BuildArch: noarch
-Requires: %{name} = %{version}-%{release}
+Requires: %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
 Requires: pidgin
 
 %description -n pidgin-%{plugin_name}
