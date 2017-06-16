@@ -11,10 +11,7 @@ Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
 URL: https://github.com/EionRobb/skype4pidgin
-
-# Run ./generate-tarball.sh script to build tarball from
-# official Git repository without legacy sources.
-Source0: %{name}-%{shortcommit0}.tar.xz
+Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
