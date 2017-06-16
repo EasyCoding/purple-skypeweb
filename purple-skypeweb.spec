@@ -15,7 +15,6 @@ URL: https://github.com/EionRobb/skype4pidgin
 # Run ./generate-tarball.sh script to build tarball from
 # official Git repository without legacy sources.
 Source0: %{name}-%{shortcommit0}.tar.xz
-Source1: generate-tarball.sh
 
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
