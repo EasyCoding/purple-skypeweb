@@ -1,12 +1,12 @@
 %global plugin_name skypeweb
 
-%global commit0 4ed9b14306ef101a82f72bfa464d959632f5f5b2
+%global commit0 0a276c20d4440ea6a2e0de4b82b4dd1c7e0e39a8
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20170615
+%global date 20170907
 
 Name: purple-%{plugin_name}
 Version: 1.4
-Release: 3.%{date}git%{shortcommit0}%{?dist}
+Release: 5.%{date}git%{shortcommit0}%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
@@ -64,6 +64,12 @@ popd
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
+* Sat Sep 09 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 1.4-5.20170907git0a276c2
+- Updated to latest snapshot.
+
+* Thu Aug 03 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.4-4.20170615git4ed9b14
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
+
 * Thu Jul 27 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.4-3.20170615git4ed9b14
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
 
