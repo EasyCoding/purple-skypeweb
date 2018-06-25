@@ -42,12 +42,7 @@ Adds pixmaps, icons and smileys for Skype protocol implemented by libskypeweb.
 sed -i -e "s,\r,," %{plugin_name}/README.md
 
 %build
-%if 0%{?fedora}
 %set_build_flags
-%else
-export CFLAGS="%{optflags}"
-export LDFLAGS="%{__global_ldflags}"
-%endif
 %make_build -C %{plugin_name}
 
 %install
