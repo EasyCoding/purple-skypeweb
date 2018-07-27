@@ -6,7 +6,7 @@
 
 Name: purple-%{plugin_name}
 Version: 1.5
-Release: 1.%{date}git%{shortcommit0}%{?dist}
+Release: 2.%{date}git%{shortcommit0}%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
@@ -42,7 +42,8 @@ Adds pixmaps, icons and smileys for Skype protocol implemented by libskypeweb.
 sed -i -e "s,\r,," %{plugin_name}/README.md
 
 %build
-%set_build_flags
+export CFLAGS="%{optflags}"
+export LDFLAGS="%{__global_ldflags}"
 %make_build -C %{plugin_name}
 
 %install
@@ -58,6 +59,9 @@ sed -i -e "s,\r,," %{plugin_name}/README.md
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
+* Fri Jul 13 2018 Fedora Release Engineering <releng@fedoraproject.org> - 1.5-2.20180525gitcf65095
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
 * Fri May 25 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 1.5-1.20180525gitcf65095
 - Updated to version 1.5.
 
