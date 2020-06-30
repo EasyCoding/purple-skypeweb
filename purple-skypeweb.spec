@@ -1,17 +1,13 @@
 %global plugin_name skypeweb
 
-%global commit0 5d29285f0f845ece94dc012371605a7f353b5d0c
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20190520
-
 Name: purple-%{plugin_name}
-Version: 1.5
-Release: 7.%{date}git%{shortcommit0}%{?dist}
+Version: 1.6
+Release: 1%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
 URL: https://github.com/EionRobb/skype4pidgin
-Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
@@ -36,7 +32,7 @@ Requires: pidgin
 Adds pixmaps, icons and smileys for Skype protocol implemented by libskypeweb.
 
 %prep
-%autosetup -n skype4pidgin-%{commit0}
+%autosetup -n skype4pidgin-%{version}
 
 # fix W: wrong-file-end-of-line-encoding
 sed -i -e "s,\r,," %{plugin_name}/README.md
@@ -58,6 +54,9 @@ sed -i -e "s,\r,," %{plugin_name}/README.md
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
+* Tue Jun 30 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6-1
+- Updated to version 1.6.
+
 * Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.5-7.20190520git5d29285
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
