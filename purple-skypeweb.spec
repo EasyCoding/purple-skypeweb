@@ -1,8 +1,8 @@
 %global plugin_name skypeweb
 
 Name: purple-%{plugin_name}
-Version: 1.6
-Release: 2%{?dist}
+Version: 1.7
+Release: 1%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
@@ -54,6 +54,9 @@ sed -i -e "s,\r,," %{plugin_name}/README.md
 %{_datadir}/pixmaps/pidgin/emotes/skype
 
 %changelog
+* Wed Aug 26 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 1.7-1
+- Updated to version 1.7.
+
 * Tue Jul 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.6-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
