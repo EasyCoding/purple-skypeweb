@@ -14,6 +14,7 @@ BuildRequires: pkgconfig(purple)
 BuildRequires: pkgconfig(json-glib-1.0)
 BuildRequires: pkgconfig(zlib)
 BuildRequires: gcc
+BuildRequires: make
 
 Provides: skype4pidgin = %{?epoch:%{epoch}:}%{version}-%{release}
 Obsoletes: skype4pidgin < %{?epoch:%{epoch}:}%{version}-%{release}
